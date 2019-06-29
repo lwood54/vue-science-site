@@ -1,0 +1,75 @@
+[
+    {
+          "tek": "7.8 B",
+          "title": "Weathering, Erosion, and Deposition",
+          "standard": "Analyze the effects of weathering, erosion, and deposition on the environment in ecoregions of Texas.",
+          "topics": [
+                {
+                      "heading": "Weathering, Erosion, Deposition Overview",
+                      "image": {
+                            "name": "w-e-d",
+                            "imgSrc": "../../images/sev8B/w_e_d.jpg",
+                            "imgSide": "left"
+                      },
+                      "content": "Weathering, erosion, and deposition are all key factors in shaping the face of the Earth. We understand them as each having a specific role, but most frequently, they overlap and interact in how they work. We will remember their roles with a simple phrase: 'Break It, Take It, Drop It'"
+                },
+                {
+                      "heading": "Weathering",
+                      "image": {
+                            "name": "weathering",
+                            "imgSrc": "../../images/sev8B/weathering.jpg",
+                            "imgSide": "right"
+                      },
+                      "content": "Weathering is the breakdown of materials of Earth's crust into smaller and smaller pieces or sediments. So weathering is the 'Break It'"
+                },
+                {
+                      "heading": "Chemical Weathering",
+                      "image": {
+                            "name": "rusted rock",
+                            "imgSrc": "../../images/sev8B/weathering_rust.jpg",
+                            "imgSide": "right"
+                      },
+                      "content": "Chemical weathering is the breaking down of rock while changing its chemical make up. Like the rock in the image, we can obviously see the mechanical split down the middle, but look closely at its color. The red is iron oxide (rust) forming when water reacts with the iron in the rock."
+                },
+                {
+                      "heading": "Mechanical Weathering",
+                      "image": {
+                            "name": "ice wedging",
+                            "imgSrc": "../../images/sev8B/ice_wedging.jpg",
+                            "imgSide": "left"
+                      },
+                      "content": "Mechanical weathering is the physical breaking of rock, such as smashing, ice wedging, dropping, splitting, and burrowing of animals, etc."
+                },
+                {
+                      "s5Heading": "Erosion",
+                      "s5Content": "Erosion is the 'Take It' from our simple phrase. This often overlaps with weathering because as weathered items break apart, agents of erosion act to take the pieces away. Erosion itself can sort of act like agents of weathering in that the items they carry with them can weather and wear down other rocks."
+                },
+                {
+                      "s6Heading": "Deposition",
+                      "s6Content": "Deposition is what happens when agents of erosion run out of energy. It is the 'Drop It' of our simple phrase. There are interesting and unique land formations that are created from deposition."
+                },
+                {
+                      "s7Heading": "Deltas",
+                      "s7Content": "Deltas are formed when large amounts of sediment are dropped at the mouth of a river where the kinetic energy runs out and the water dumps out into a large body of water."
+                },
+                {
+                      "s8Heading": "Young Mountains",
+                      "s8Content": "Younger mountains are much more jagged because they have faced the agents of weathering and erosion over time. These Himalayan Mountains began forming around 50 million years ago. That may sound like alot until we observe the Arbuckle Mountains."
+                },
+                {
+                      "s9Heading": "Old Mountains",
+                      "s9Content": "The Arbuckle Mountains found in Southern Oklahoma are not nearly as magnifacent and sharp as the Himalayan Mountains. The Arbuckle Mountains, however, are about 525 million years old! That is almost 10 times older than the Himalayan Mountains!"
+                }
+          ],
+          "quiz": [
+                {
+                      "question": "Which of the following is the best definition of a watershed?",
+                      "wrong1": "A building that stores water, usually kept behind a house.",
+                      "wrong2": "The water that soaks in the ground and collects below the surface after it rains",
+                      "wrong3": "The water located in a stream, river, pond, or lake.",
+                      "correct": "The area of land that drains to a common body of water.",
+                      "imge": ""
+                }
+          ]
+    }
+]
