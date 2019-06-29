@@ -41,7 +41,8 @@
 	}
 
 	// VUE animations: class + -enter & class + -leave-to
-	// This is the goal for the end of the transition
+	// v-enter (starting point) --> v-enter-active(actual transition) --> v-enter-to (ending point)
+	// v-leave (starting point for el that is leaving) --> v-leave-active (actual transition) --> v-leave-to (ending point)
 	.page-change-enter,
 	.page-change-leave-to {
 		opacity: 0;
