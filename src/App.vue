@@ -28,6 +28,10 @@
 
 
 <style lang="scss">
+	body {
+		margin: 0;
+	}
+
 	#app {
 		font-family: roboto, Helvetica, Arial, sans-serif;
 		display: flex;
@@ -55,13 +59,13 @@
 		width: 100%;
 		min-height: 100vh;
 		margin: 0 auto;
-		background-color: gray;
-		padding-left: 300px;
+		padding-left: 250px;
 		padding-top: 5px;
 	}
 
 	.sidebar-container {
 		position: fixed; /* to allow movement of div off screen */
+		width: 250px;
 	}
 
 	.topnav-container {
@@ -87,13 +91,13 @@
 
 	@keyframes slide-left {
 		100% {
-			transform: translate(-400px);
+			transform: translate(-300px);
 		}
 	}
 	@keyframes slide-right {
 		0% {
 			// needs to start off screen when coming in
-			transform: translateX(-400px);
+			transform: translateX(-300px);
 		}
 		100% {
 			transform: translateX(0);
@@ -125,7 +129,7 @@
 		}
 		.page-container {
 			transition: padding 1.1s ease-in;
-			padding-left: 300px;
+			padding-left: 250px;
 		}
 	}
 </style>
