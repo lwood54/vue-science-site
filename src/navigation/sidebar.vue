@@ -3,7 +3,7 @@
 		<router-link
 			v-for="item in items"
 			:key="item.title"
-			class="router-links"
+			class="router-links router-links--sidebar"
 			:to="item.destination ? item.destination : '/'"
 		>{{item.title}}</router-link>
 	</div>
@@ -23,7 +23,7 @@
 	};
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.router-links {
 		align-content: center;
 		border-radius: 4px;
