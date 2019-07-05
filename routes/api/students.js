@@ -35,21 +35,27 @@ router.post('/', (req, res) => {
                 email: req.body.email,
                 quiz1_1: req.body.quiz1_1,
                 quiz1_2: req.body.quiz1_2
-                // date is put in automatically
         }); // 'Student() is using our model created above connected to StudentSchema
 
+        // console.log('Student: ', Student);
+        Student.createIndexes( { email: 1 }, {unique:true} );
+        // NOTE: when method below is used, it will apply this index to the db, but it will persist even
+        // if email and it's unique requirement are removed. Then will throw an error. So you would either need
+        // to delete the index from mLab or wherever you access the mongoDB, or find a way to run a script in here
+        // that would remove the index.
+        // https://stackoverflow.com/questions/39988941/mongodb-e11000-duplicate-key-error
         // find out of user already exists with that email, if exists send message stating so
         // if no user exists with that email, then add student
-        Student.once('email', function(error) {
-            assert.ifError(error);
-            Student.create(newStudent, error => {
-              // Will error, but will *not* be a mongoose validation error, it will be
-              // a duplicate key error.
-              assert.ok(error);
-              assert.ok(!error.errors);
-              assert.ok(error.message.indexOf('duplicate key error') !== -1);
-            });
-          });
+        // Student.once('email', error => {
+        //     assert.ifError(error);
+        //     Student.create(newStudent, error => {
+        //       // Will error, but will *not* be a mongoose validation error, it will be
+        //       // a duplicate key error.
+        //       assert.ok(error);
+        //       assert.ok(!error.errors);
+        //       assert.ok(error.message.indexOf('duplicate key error') !== -1);
+        //     });
+        //   });
 
         newStudent.save() // saves new Student to the DB
                 .then(student => res.json(student)); // Promise based, gives us back the student that it's saving

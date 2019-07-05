@@ -29,8 +29,11 @@ const StudentSchema = new Schema({
 
 // have to export for access
 // create a mongoose model that is supplied the model name and the schema to use
-module.exports = Student = mongoose.model('student', StudentSchema);
+// 'student' is the singular name of the collection the model is for.
+// *Mongoose automatically looks for the plural, lowercase version of your model name.
+// https://mongoosejs.com/docs/models.html
+// module.exports = Student = mongoose.model('student', StudentSchema);
 
-// will the following work? Check later after it is up and running:
-// const Student = mongoose.model('student', StudentSchema);
-// module.exports = Student
+// the following is more explicit to me, so I will be going with this format
+const Student = mongoose.model('student', StudentSchema);
+module.exports = Student
