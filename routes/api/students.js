@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
         //fetch all students from DB
         //take model called 'Student'
         Student.find() // returns a Promise
-                .sort({ quiz1_1: -1 }) // mongoose can sort by descending (-1) or ascending (1)
+                //.sort({ quiz1_1: -1 }) // mongoose can sort by descending (-1) or ascending (1)
                 .then(students => res.json(students)); // JSON api that we make readable
 });
 
