@@ -29,9 +29,14 @@ router.get('/', (req, res) => {
 // this .post() starts at the end of /api/students because of how we setup server.js
 // so we will use it as --> axios.post('/api/students', student).then()...
 router.post('/', (req, res) => {
+        // find out of user already exists with that email, if exists send message stating so
+        // if no user exists with that email, then add student
+        console.log('Student object: ', Student);
+
         // construct an object to insert into the DB
         const newStudent = new Student({
                 name: req.body.name,
+                email: req.body.email,
                 quiz1_1: req.body.quiz1_1,
                 quiz1_2: req.body.quiz1_2
                 // date is put in automatically

@@ -23,6 +23,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // enable CORS
+// https://enable-cors.org/server_expressjs.html
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");

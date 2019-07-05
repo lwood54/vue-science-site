@@ -5,17 +5,23 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Create Schema
+// Schema types: https://mongoosejs.com/docs/schematypes.html
 const StudentSchema = new Schema({
         name: {
                 type: String,
                 required: true
         },
+        email: {
+            type: String,
+            unique: true,
+            required: true
+        },
         quiz1_1: {
-            type: Number,
+            type: Array, // will have an array of top 10 scores on quiz attempts
             default: null
         },
         quiz1_2: {
-            type: Number,
+            type: Array,
             default: null
         }
 

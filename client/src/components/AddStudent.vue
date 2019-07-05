@@ -1,7 +1,10 @@
 <template>
 	<div>
 		<button @click="addName">Add Student</button>
-		<input type="text" v-model="studentName">
+		<h3>name:</h3>
+		<input type="text" v-model="studentName" placeholder="Logan Wood">
+		<h3>email:</h3>
+		<input type="text" v-model="studentEmail" placeholder="abc@123.com">
 	</div>
 </template>
 
@@ -9,7 +12,8 @@
 	export default {
 		data() {
 			return {
-				studentName: "Logan Wood",
+				studentName: "",
+				studentEmail: "",
 				quiz1_1: 100
 			};
 		},
@@ -18,6 +22,7 @@
 				var url = "http://localhost:5000/api/students";
 				var data = {
 					name: this.studentName,
+					email: this.studentEmail,
 					quiz1_1: this.quiz1_1
 				};
 
