@@ -12,11 +12,11 @@ const StudentSchema = new Schema({
         },
         quiz1_1: {
             type: Number,
-            default: 100
+            default: null
         },
         quiz1_2: {
             type: Number,
-            default: 100
+            default: null
         }
 
 });

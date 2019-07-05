@@ -22,6 +22,13 @@ const app = express();
 // bodyParser middleware
 app.use(bodyParser.json());
 
+// enable CORS
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+
 // DB config (another route is to use 'dotenv' and create the .env file that we can .gitignore)
 const db = require('./config/keys').mongoURI;
 

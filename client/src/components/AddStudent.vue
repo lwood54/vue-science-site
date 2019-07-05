@@ -17,8 +17,8 @@
 			addName(name) {
 				var url = "http://localhost:5000/api/students";
 				var data = {
-					name: studentName,
-					quiz1_1
+					name: this.studentName,
+					quiz1_1: this.quiz1_1
 				};
 
 				fetch(url, {

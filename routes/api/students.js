@@ -31,7 +31,9 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
         // construct an object to insert into the DB
         const newStudent = new Student({
-                name: req.body.name
+                name: req.body.name,
+                quiz1_1: req.body.quiz1_1,
+                quiz1_2: req.body.quiz1_2
                 // date is put in automatically
         }); // 'Student() is using our model created above connected to StudentSchema
         newStudent.save() // saves new Student to the DB
