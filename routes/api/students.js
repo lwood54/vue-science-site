@@ -29,10 +29,6 @@ router.get('/', (req, res) => {
 // this .post() starts at the end of /api/students because of how we setup server.js
 // so we will use it as --> axios.post('/api/students', student).then()...
 router.post('/', (req, res) => {
-        // find out of user already exists with that email, if exists send message stating so
-        // if no user exists with that email, then add student
-        console.log('Student object: ', Student);
-
         // construct an object to insert into the DB
         const newStudent = new Student({
                 name: req.body.name,
@@ -41,6 +37,20 @@ router.post('/', (req, res) => {
                 quiz1_2: req.body.quiz1_2
                 // date is put in automatically
         }); // 'Student() is using our model created above connected to StudentSchema
+
+        // find out of user already exists with that email, if exists send message stating so
+        // if no user exists with that email, then add student
+        Student.once('email', function(error) {
+            assert.ifError(error);
+            Student.create(newStudent, error => {
+              // Will error, but will *not* be a mongoose validation error, it will be
+              // a duplicate key error.
+              assert.ok(error);
+              assert.ok(!error.errors);
+              assert.ok(error.message.indexOf('duplicate key error') !== -1);
+            });
+          });
+
         newStudent.save() // saves new Student to the DB
                 .then(student => res.json(student)); // Promise based, gives us back the student that it's saving
 });
