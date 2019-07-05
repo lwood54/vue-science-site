@@ -4,7 +4,7 @@ const express = require('express');
 // use Express Router
 const router = express.Router();
 
-// bring in the student model to make quries to the mongoDB
+// bring in the student model to make queries to the mongoDB
 const Student = require('../../models/Student');
 
 //// create routes
@@ -15,9 +15,9 @@ const Student = require('../../models/Student');
 // this .get() starts at the end of /api/students because of how we setup server.js
 // so when we use this with axios, we will do --> axios.get('/api/students').then()...
 router.get('/', (req, res) => {
-        //fetch all students from DB
+        //fetch all students (student = document) from collection (students = collection)
         //take model called 'Student'
-        Student.find() // returns a Promise
+        Student.find()
                 //.sort({ quiz1_1: -1 }) // mongoose can sort by descending (-1) or ascending (1)
                 .then(students => res.json(students)); // JSON api that we make readable
 });
@@ -38,7 +38,7 @@ router.post('/', (req, res) => {
         }); // 'Student() is using our model created above connected to StudentSchema
 
         // console.log('Student: ', Student);
-        Student.createIndexes( { email: 1 }, {unique:true} );
+        // Student.createIndexes( { email: 1 }, {unique:true} );
         // NOTE: when method below is used, it will apply this index to the db, but it will persist even
         // if email and it's unique requirement are removed. Then will throw an error. So you would either need
         // to delete the index from mLab or wherever you access the mongoDB, or find a way to run a script in here

@@ -6,6 +6,9 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 // Schema types: https://mongoosejs.com/docs/schematypes.html
+// If schema created when no documents in the db, then this will set errors, (like email below ie unique: true)
+// but if this is added after documents (student) are in the colledtion (students), then this will have to be added
+// as an index into the collection manually (i think this is the case)
 const StudentSchema = new Schema({
         name: {
                 type: String,
@@ -32,8 +35,8 @@ const StudentSchema = new Schema({
 // 'student' is the singular name of the collection the model is for.
 // *Mongoose automatically looks for the plural, lowercase version of your model name.
 // https://mongoosejs.com/docs/models.html
-// module.exports = Student = mongoose.model('student', StudentSchema);
+// module.exports = Student = mongoose.model('Student', StudentSchema);
 
 // the following is more explicit to me, so I will be going with this format
-const Student = mongoose.model('student', StudentSchema);
+const Student = mongoose.model('Student', StudentSchema);
 module.exports = Student

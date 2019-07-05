@@ -33,7 +33,7 @@ app.use(function(req, res, next) {
 // DB config (another route is to use 'dotenv' and create the .env file that we can .gitignore)
 const db = require('./config/keys').mongoURI;
 
-// connect a mongoDB database (I am using mLab cloud mongDB)
+// connect a mongoDB database (I am using mLab cloud mongoDB)
 mongoose.connect(db)
         .then(() => {
                 console.log('MongoDB Connected...');
