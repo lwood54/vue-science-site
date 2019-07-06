@@ -58,7 +58,13 @@ router.post('/', (req, res) => {
         //   });
 
         newStudent.save() // saves new Student to the DB
-                .then(student => res.json(student)); // Promise based, gives us back the student that it's saving
+                .then(student => {
+                    res.json(student)
+                }, error => { // catch and send error to display to user if desired
+                    if (error) {
+                        res.send({status: 400, error});
+                    }
+                }); // Promise based, gives us back the student that it's saving
 });
 //// USING Postman ////
 // change to 'POST'
