@@ -11,7 +11,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 // allows use of .env variables for security and not uploading passwords onto github
-// require('dotenv').config();
+require('dotenv').config();
 
 // notfiy server to look for routes (these could be put in server.js, but separating this cleans codebase)
 const students = require('./routes/api/students');
@@ -31,10 +31,10 @@ app.use(function(req, res, next) {
   });
 
 // DB config (another route is to use 'dotenv' and create the .env file that we can .gitignore)
-const db = require('./config/keys').mongoURI;
+// const db = require('./config/keys').mongoURI;
 
 // connect a mongoDB database (I am using mLab cloud mongoDB)
-mongoose.connect(db)
+mongoose.connect(process.env.MONGO_URI)
         .then(() => {
                 console.log('MongoDB Connected...');
         })
