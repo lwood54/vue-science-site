@@ -4,23 +4,22 @@ const express = require('express');
 // mongoose helps make using mongoDB easier
 const mongoose = require('mongoose');
 
-// body-parser takes request and get data from the body
-const bodyParser = require('body-parser');
-
 // import path (a provided Node module)
 const path = require('path');
 
 // allows use of .env variables for security and not uploading passwords onto github
 require('dotenv').config();
 
-// notfiy server to look for routes (these could be put in server.js, but separating this cleans codebase)
-const students = require('./routes/api/students');
-
 // intialize express app
 const app = express();
 
 // bodyParser middleware
-app.use(bodyParser.json());
+// Express now comes with a built in bodyParser
+app.use(express.json());
+
+// notfiy server to look for routes (these could be put in server.js, but separating this cleans codebase)
+const students = require('./routes/api/students');
+const authRoute = require('./routes/auth');
 
 // enable CORS
 // https://enable-cors.org/server_expressjs.html
@@ -29,9 +28,6 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
-
-// DB config (another route is to use 'dotenv' and create the .env file that we can .gitignore)
-// const db = require('./config/keys').mongoURI;
 
 // connect a mongoDB database (I am using mLab cloud mongoDB)
 mongoose.connect(process.env.MONGO_URI)
@@ -45,7 +41,8 @@ mongoose.connect(process.env.MONGO_URI)
 // Use routes
 // anything that comes in and uses /api/students, will refer to the students variable (which connects to the
 // routes/api/students.js file)
-app.use('/api/students', students);
+app.use('/api/student', authRoute);
+// app.use('/api/students', students);
 
 // give build instructions for heroku deployment
 // Serve static assets 'build' folder if in production
