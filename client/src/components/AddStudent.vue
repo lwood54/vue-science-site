@@ -7,11 +7,13 @@
 		<input type="text" v-model="studentEmail" placeholder="abc@123.com">
 		<h4 v-if="addStudentSuccessMessage">{{addStudentSuccessMessage}}</h4>
 		<h4 v-else-if="addStudentFailMessage">{{addStudentFailMessage}}</h4>
+		<h4>some-data: {{someData}}</h4>
 	</div>
 </template>
 
 <script>
 	export default {
+		props: ["some-data"],
 		data() {
 			return {
 				studentName: "",

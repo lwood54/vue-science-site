@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<h1>Home</h1>
-		<add-student/>
+		<add-student someData="this is data"/>
 	</div>
 </template>
 
